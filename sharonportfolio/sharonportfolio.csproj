@@ -395,6 +395,7 @@
     <Content Include="ThemeTemplate\css\bootstrap-theme.min.css" />
     <Content Include="ThemeTemplate\css\bootstrap.css" />
     <Content Include="ThemeTemplate\css\bootstrap.min.css" />
+    <Content Include="ThemeTemplate\css\custom.css" />
     <Content Include="ThemeTemplate\css\font-awesome.min.css" />
     <Content Include="ThemeTemplate\css\idangerous.swiper.css" />
     <Content Include="ThemeTemplate\css\lightbox.css" />

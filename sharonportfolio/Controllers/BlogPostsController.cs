@@ -49,13 +49,27 @@ namespace sharonportfolio.Controllers
         }
 
         // GET: BlogPosts/Details/5
-        public ActionResult Details(int? id)
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    BlogPost blogPost = db.Posts.Find(id);
+        //    if (blogPost == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(blogPost);
+        //}
+
+        public ActionResult Details(string Slug)
         {
-            if (id == null)
+            if (String.IsNullOrWhiteSpace(Slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.Find(id);
+            BlogPost blogPost = db.Posts.FirstOrDefault(p => p.Slug == Slug);
             if (blogPost == null)
             {
                 return HttpNotFound();
@@ -80,7 +94,19 @@ namespace sharonportfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                var Slug = StringUtilities.URLFriendly(blogPost.Title);
+                if (String.IsNullOrWhiteSpace(Slug))
+        {
+                        ModelState.AddModelError("Title", "Invalid title.");
+                return View(blogPost);
+                }
+                if (db.Posts.Any(p => p.Slug == Slug))
+        {
+                    ModelState.AddModelError("Title", "The title must be unique.");
+                return View(blogPost);
+        }
                 blogPost.Created = DateTime.Now; //THIS ALLOWS THE BLOG TO PRINT CURRENT DATE & TIME FOR EACH POST//
+                blogPost.Slug = Slug;
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -114,12 +140,7 @@ namespace sharonportfolio.Controllers
         {
             if (ModelState.IsValid)
         {
-                //var Slug - StringUtilities.URLFriendly(Post.Title);
-            //if (String.IsNullOrWhiteSpace(Slug))
-            //{
-            //    //ModelState.AddMode1Error("Title", "Invalid title.");
-            //   // return View(Post);
-            //}
+               
             db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
 
