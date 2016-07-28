@@ -86,12 +86,12 @@ namespace sharonportfolio.Controllers
         {
             if (ModelState.IsValid)
         {
-                var Slug - StringUtilities.URLFriendly(Post.Title);
-            if (String.IsNullOrWhiteSpace(Slug))
-            {
-                ModelState.AddMode1Error("Title", "Invalid title.");
-                return View(Post);
-            }
+                //var Slug - StringUtilities.URLFriendly(Post.Title);
+            //if (String.IsNullOrWhiteSpace(Slug))
+            //{
+            //    //ModelState.AddMode1Error("Title", "Invalid title.");
+            //   // return View(Post);
+            //}
             db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
 
