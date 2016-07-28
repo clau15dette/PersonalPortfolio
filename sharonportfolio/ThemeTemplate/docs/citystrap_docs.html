@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <title>CityStrap one page HTML5 template</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="left-col">
+         <a href="http://www.mammoth-interactive.com"><img src="images/mammoth.jpg" alt="Mammoth-interactive"></a>
+
+            <ul id="contents">
+                <li><a href="#start" title="start">Start</a></li>
+                <li><a href="#template" title="installing the template">Installing the template</a></li>
+                <li><a href="#css" title="CSS files">CSS files</a></li>
+                <li><a href="#header" title="Changing the background image">Changing the main background image</a></li>
+					 <li><a href="#carousel" title="Add/edit the carousel">Add/edit the carousel</a></li>
+					 <li><a href="#jquery" title="Jquery plugins">Jquery plugins</a></li>
+					 <li><a href="#social" title="Adding social icons">Adding social icons</a></li>
+					 <li><a href="#credits" title="Credits">Credits</a></li>
+            </ul>
+        </div><!-- end left col -->
+
+        <div id="main">
+        	<div id="start">
+            <h1>CityStrap one page HTML5 template</h1>
+
+<p>Documentation by "Mammoth Interactive"
+Created: 18 December 2013<br/>
+Latest update 17 March 2014</p>
+<ul>
+	<li>v2.0 Ugrade to Bootstrap 3.1.1</li>
+	<li>Update Jquery plugin for navigation fix in Google Chrome</li>
+</ul>
+
+<p><a href="http://www.mammoth-interactive.com">www.mammoth-interactive.com</a></p>
+
+<p>Thanks for purchasing this template and we hope you enjoy using it and creating something great. We'd love to see how you use this theme, so please send a link to your finished work to <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#110;&#102;&#x6f;&#64;&#109;&#x61;&#109;&#109;&#111;&#x74;&#104;&#45;&#x69;&#x6e;&#116;&#101;&#114;&#x61;&#99;&#116;&#x69;&#118;&#x65;&#x2e;&#x63;&#111;&#109;">&#105;&#x6e;&#102;&#x6f;&#x40;&#109;&#x61;&#109;&#109;&#111;&#116;&#x68;&#45;&#x69;&#x6e;&#116;&#101;&#114;&#x61;&#x63;&#116;&#105;&#x76;&#x65;&#x2e;&#x63;&#111;&#x6d;</a></p>
+            <p><a href="#" title="back to top">back to top</a></p>
+			</div><!-- end start -->
+
+
+<!-- ============================================ TEMPLATE ============================================= -->
+
+<div id="template">
+            <h2>Installing the template</h2>
+            <p>the basic structure of the HTML theme looks like the following:</p>
+
+<pre>
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Beachstrap Theme&lt;/title&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content=""&gt;
+&lt;meta name="author" content=""&gt;
+&lt;!-- STYLESHEETS --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- CONTENT --&gt;
+&lt;!-- JAVASCRIPTS --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+
+         	<p>Everything goes inside the <code>&lt;div&gt;</code> named "content".</p>
+         	<p><strong>For all the images, it's a good idea to use the supplied 'placeholder' images as a template for image sizes.</strong></p>
+         	<p><a href="#" title="back to top">back to top</a></p>
+
+
+<h2>CSS Files</h2>
+
+<p>The CSS theme file for CityStrap is in the folder <em>css > main.css</em>
+It follows the following structure:</p>
+
+<pre><code>/* Table of Contents
+==================================================
+
+#GENERAL
+#HEADER/NAVIGATION
+#MAIN
+#CAROUSEL SECTION
+#MAIN CONTENT
+#SWIPER
+#POSTS
+#SECONDRY SWIPER
+#MAIN RESPONSIVE STYLES
+#CONTACT SECTION
+#FOOTER
+#MEDIA QUERIES
+
+==================================================
+*/
+</code></pre>
+
+				<p><a href="#" title="back to top">back to top</a></p>
+</div><!-- end css -->
+
+
+
+<!-- ============================================ CHANGE THE HEADER BACKGROUND ============================================= -->
+
+<div id="header">
+	<h2>Change the background image</h2>
+	<p>To the change the scrolling image, go through the following steps</p>
+		<ol>
+		<li>Create a new image at 1680px x 900px and save it named <strong>main-bg.jpg</strong></li>
+		<li>Drop it into the images folder: <em>CityStrap > images</em></li>
+		</ol>
+	<p><a href="#" title="back to top">back to top</a></p>
+</div>
+
+
+<!-- ============================================ CAROUSEL ============================================= -->
+
+<div id="carousel">
+
+<h1>Add/edit the sliding carousel slides</h1>
+
+<p>The basic html for the carousel slide looks like the below:<br />
+To add a new slide, copy and paste this snippet and edit the contents between the <code>&lt;div&gt;...&lt;/div&gt;</code> tags</p>
+
+<pre><code>    &lt;!-- item --&gt;
+        &lt;div class="item"&gt;
+        &lt;!-- edit contents here --&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;Example headline.&lt;/h1&gt;
+                &lt;div class="caption"&gt;
+                &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi                porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;img src="images/responsiveShot.png" alt="responsiveShot" class="img-responsive" &gt;
+                &lt;p class="btn-wrp"&gt;&lt;a class="c2a-button"&gt;Call to action&lt;/a&gt;&lt;/p&gt;
+        &lt;!-- stop editing here --&gt;
+            &lt;/div&gt;
+    &lt;!-- end item --&gt;
+</code></pre>
+
+<p><strong>also you will need to add a new indicator to the carousel as you add new slides:</strong></p>
+
+<pre><code>    &lt;!-- Indicators --&gt;
+    &lt;ol class="carousel-indicators"&gt;
+        &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+        &lt;li data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;li data-target="#myCarousel" data-slide-to="2"&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+</code></pre>
+
+<p>Copy and paste the snippet below, under the last <code>&lt;li&gt;...&lt;/li&gt;</code> tag to add a new indicator.</p>
+
+<pre><code>&lt;li data-target="#myCarousel" data-slide-to="2"&gt;&lt;/li&gt;
+</code></pre>
+			<p><a href="#" title="back to top">back to top</a></p>
+</div><!-- end carousel -->
+
+<!-- ============================================ JQUERY PLUGINS ============================================= -->
+
+<div id="jquery">
+
+            <h2>Jquery plugins</h2>
+            <p>Here is a list of all the Jquery plugins we have used:</p>
+
+<pre><code>&lt;script src="js/hoverIntent.js"&gt;&lt;/script&gt;
+&lt;script src="js/lightbox-2.6.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/idangerous.swiper-2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.mixitup.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/waypoints.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.scrollTo.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.nav.js"&gt;&lt;/script&gt;
+</code></pre>
+
+            <p>This template uses several javascript files, all of them are placed a folder called "js" and on googleapis servers. All javascript files are placed at the bottom of the page to speed up the loading time. If you want to add your google analytics code in the page, you should add it after the javascripts and before the <code>&lt;/body&gt;</code> tag</p>
+            <p><a href="#" title="back to top">back to top</a></p>
+
+</div>
+
+<!-- ============================================ SOCIAL ICONS ============================================= -->
+
+<div id="social">
+            <h2>Adding social icons</h2>
+            <p>Adding social icons of your choice is very easy. The theme uses Font Awesome icons. You can add your own with</p>
+
+<pre>
+<code>&lt;i class="icon-twitter-sign icon-3x darkgray rm20 bm10"&gt;&lt;/i&gt;</code>
+</pre>
+			<p><a href="#" title="back to top">back to top</a></p>
+</div><!-- end jquery -->
+
+<!-- ============================================ CREDITS ============================================= -->
+
+<div id="credits">
+           <h2>Credits</h2>
+
+<p>Demo images (NOT included in the package)<br/>
+<em>http://www.flickr.com</em><br/>
+<em>http://www.pixden.com</em><br/>
+<em>http://www.unsplash.com</em></p>
+
+<p><strong>all Flickr images fall under the Creative Commons License:</strong><br/>
+<a href="http://creativecommons.org/licenses/by/2.0/deed.en">Creative Commons License</a></p>
+
+<h3>Thanks to:</h3>
+
+<p><a href="http://www.flickr.com/photos/jonathan_eos7d/6206510176"><strong>Jonathan Thomsen</strong></a><br/>
+http://www.flickr.com/photos/jonathan_eos7d</p>
+
+<p><a href="http://www.flickr.com/photos/viktoredholm/8354049623/"><strong>Viktor Edholm</strong></a><br/>
+http://www.flickr.com/photos/viktoredholm</p>
+
+<p><a href="http://www.flickr.com/photos/cdianne/3355461701"><strong>Dee'lite</strong></a><br/>
+http://www.flickr.com/photos/cdianne</p>
+
+<p><a href="http://www.flickr.com/photos/hilighters/7276908608/"><strong>hilighters</strong></a><br/>
+http://www.flickr.com/photos/hilighters/</p>
+
+<p><a href="http://www.flickr.com/photos/pagedooley/1042898105/"><strong>kevin dooley</strong></a><br/>
+http://www.flickr.com/photos/pagedooley</p>
+
+<p><a href="http://www.flickr.com/photos/ronhenry/482016216/"><strong>Ron Henry</strong></a><br/>
+http://www.flickr.com/photos/ronhenry</p>
+
+<p><a href="http://www.flickr.com/photos/t_trace/2334158401"><strong>taiyofj</strong></a><br/>
+http://www.flickr.com/photos/t_trace/2334158401</p>
+
+<p><a href="http://www.flickr.com/photos/lulek/10324612954/"><strong>Maciek Lulkoj</strong></a><br/>
+http://www.flickr.com/photos/lulek</p>
+
+<p><a href="http://www.flickr.com/photos/flashcurd/8477569323/"><strong>flashcurd</strong></a><br/>
+http://www.flickr.com/photos/flashcurd</p>
+
+<p><a href="http://www.flickr.com/photos/frammfoto/3970995555/"><strong>RFoto</strong></a><br/>
+http://www.flickr.com/photos/frammfoto</p>
+
+<p><a href="http://www.flickr.com/photos/58842866@N08/5388130101/"><strong>tommerton2010</strong></a><br/>
+http://www.flickr.com/photos/58842866@N08</p>
+
+<p><a href="http://www.flickr.com/photos/ringkong/6486287611"><strong>typexnick</strong></a> <br/>
+http://www.flickr.com/photos/ringkong/</p>
+
+<p><a href="http://www.flickr.com/photos/pezz/1423827249/"><strong>broma</strong></a><br/>
+http://www.flickr.com/photos/pezz</p>
+
+<p><a href="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_5243a2eb2bc02_1.JPG"><strong>unsplash.com</strong></a><br/>
+http://unsplash.com/</p>
+
+<p><a href="http://www.pixeden.com/"><strong>Portfolio imgages by Pixden</strong></a><br/>
+http://www.pixeden.com/</p>
+
+
+<!-- end credits -->
+<p><a href="#" title="back to top">back to top</a></p>
+</div>
+        </div><!-- end main content -->
+    </div><!-- end wrapper -->
+</body>
+</html>

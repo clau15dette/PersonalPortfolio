@@ -1,0 +1,376 @@
+﻿
+@{
+    ViewBag.Title = "JS Exercises";
+}
+<head>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+   
+</head>
+
+
+<style>
+    h2 {
+        text-align: center;  
+    }
+     #jslinks {
+         text-align: center;
+         font-size: 30px;
+     }
+</style>
+
+
+    <!--FACTORIAL-->
+    <div class="modal fade" id="max" tabindex="-1" role="dialog"
+         aria-labelledby="my" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">
+                        x
+                    </button>
+                    <h2 class="modal-title" id="my">Factorial of a Number.</h2>
+
+                    <p>Enter the number and click calculate.</p>
+
+                    X:<input id="x" value="" /><br><br>
+
+                    <button id="btn_CalFact">Calculate Factorial</button>
+                    <p id="demo"></p>
+
+                    @*<script>
+                            //--------------------------------------------------------------------------------------------------------------------------------------
+                        </script>*@
+<pre class="prettyprint">
+function myFunction()
+{
+    var x = document.getElementById("x").value
+    document.getElementById("demo").innerHTML="Factorial of " + x + " = " + fact(x);
+    }
+function fact(x)
+    {
+    if (x==1)
+    {
+    return 1;
+    }
+    else
+    {return x*fact(x-1);
+}
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>JavaScript Exercises</h2>
+
+    <!--PALINDROME-->
+
+
+    <div class="modal fade" id="pali" tabindex="-1" role="dialog"
+         aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">x</button>
+                    <h1 class="modal-title" id="myModal">Palindrome</h1>
+                    <p>What exactly is a PALINDROME?</p>
+                    <p>A palindrome is a word that reads the same backwards as forwards.</p>
+                    <h3>Try it out!!!</h3>
+                    <p>Below is a list that you can plug into the text box. Perhaps you can think of some different words. Have fun!!</p>
+                    <ul>
+                        <li>Level</li>
+                        <li>Rotor</li>
+                        <li>Stats</li>
+                        <li>Tenet</li>
+                        <li>Minim</li>
+                        <li>Civic</li>
+                        <li>Kayak</li>
+                    </ul>
+
+                    <form method="get">
+                        <input type="text" id="txtbox" placeholder="Enter Word" />
+                        <input type="button" id="btn_Pali" value="Check Palindrome" />
+                    </form>
+
+                    @*<script>
+                            //-------------------------------------------------------------------------------------------------------------------------------------------
+                        </script>*@
+
+
+                    <pre class="prettyprint">
+function myFunction()
+{
+    var string = document.getElementById('txtbox').value;
+    var result = checkPalindrome(string);
+    alert('The Entered String "'+string +'" is "'+result+'"');
+}
+
+function checkPalindrome(string)
+{
+    var originalString;
+    string = string.toLowerCase();
+    originalString = string;
+    string = string.split('');
+    string= string.reverse();
+    string = string.join('');
+    var reverseString = string
+			
+    if(originalString == reverseString){
+    return 'Palindrome'; 
+    }else{
+    return 'Not Palindrome';
+    }   
+}
+
+$('#pali').modal('show');
+</pre>
+                    $('#pali').modal('show');
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Go ahead and run this project and take me to where you've got some of your exercises work -->
+    <!--THE MODAL-->
+<div class="modal fade" id="five" tabindex="-1" role="dialog"
+     aria-labelledby="Label" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    x
+                </button>
+                <h3 class="modal-title" id="Label">Enter 5 numbers and this code will determine the least, the greatest, the mean, the sum and the product of all of the numbers.</h3>
+            </div>
+
+            <div class="container">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-offset-2 col-sm-10" for="id1"></label>
+                    <div class="col-sm-1">
+                        <input type="number" class="form-control" id="id1" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-offset-2 col-sm-10" for="id2"></label>
+                    <div class="col-sm-1">
+                        <input type="number" class="form-control" id="id2" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-offset-2 col-sm-10" for="id3"></label>
+                    <div class="col-sm-1">
+                        <input type="number" class="form-control" id="id3" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-offset-2 col-sm-10" for="id4"></label>
+                    <div class="col-sm-1">
+                        <input type="number" class="form-control" id="id4" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-offset-2 col-sm-10" for="id5"></label>
+                    <div class="col-sm-1">
+                        <input type="number" class="form-control" id="id5" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-default" id="cal">Calculate</button>
+                </div>
+            </div>
+
+            <div id="output"></div>
+
+            <pre class="prettyprint">
+    $("#cal").click(function()
+{
+    $("input.form-control").each(function() 
+    {
+        arr.push(parseFloat($(this).val()));
+        sum = sum + parseFloat($(this).val());
+        product = product * parseFloat($(this).val());
+});	
+    var least = Math.min(arr[0], arr[1], arr[2], arr[3], arr[4]);
+    var greatest = Math.max(arr[0], arr[1], arr[2], arr[3], arr[4]);
+    mean = sum / arr.length;
+    $("#output").html("The least number is " + least + "<br> The greatest number is " + greatest + "<br> The mean is "+ mean + "<br> The sum is " + sum + "<br> The product is "+product);
+}
+</pre>
+
+            @*<script>
+
+                    </script>*@
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="fizz" tabindex="-1" role="dialog"
+     aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title">Fizz Buzz</h1>
+                
+                
+                <button id="fizzbtn">Run Fizz Buzz</button>
+                <div id="fizzresult"></div>
+                
+                
+
+                @*<script>
+                        //-------------------------------------------------------------------------------------------------------------------------------------------
+                    </script>*@
+
+
+                <pre class="prettyprint">
+function fizzBuzz() 
+{
+    var input1 = +(prompt("Please enter a number between 1 and 100"));
+    var input2 = +(prompt("Enter another number between 1 and 100"));
+    var fizzHtml = "";
+        for (i = 1; i <= 100; i++) {
+        if ((i % input1 == 0) && (i % input2 == 0)) {
+            fizzHtml += "FizzBuzz" + " ";
+    } else if ((i % input1 == 0)) {
+            fizzHtml += "Fizz" + " ";
+    } else if ((i % input2 == 0)) {
+            fizzHtml += "Buzz" + " ";
+    }   else {
+        fizzHtml += i + " ";
+    }
+    }
+        return (fizzHtml);
+}
+</pre>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+        <script>
+                        $(function () {
+
+                            $('#btn_CalFact').click(function () {
+                                myFunction();
+                            });
+
+                            function myFunction() {
+                                var x = document.getElementById("x").value;
+                                document.getElementById("demo").innerHTML = "Factorial of " + x + " = " + fact(x);
+                            }
+
+                            function fact(x) {
+                                if (x === 1) {
+                                    return 1;
+                                } else {
+                                    return x * fact(x - 1);
+                                }
+                            }
+
+                            $('#btn_Pali').click(function () {
+                                myFunctionp();
+                            });
+
+                            function myFunctionp() {
+                                var string = document.getElementById('txtbox').value;
+                                var result = checkPalindrome(string);
+                                alert('The Entered String "' + string + '" is "' + result + '"');
+                            }
+
+                            function checkPalindrome(string) {
+                                var originalString;
+                                string = string.toLowerCase();
+                                originalString = string;
+                                string = string.split('');
+                                string = string.reverse();
+                                string = string.join('');
+
+                                var reverseString = string;
+                                if (originalString === reverseString) {
+                                    return 'Palindrome'; // return "Palindrome" if true
+                                } else {
+                                    return 'Not Palindrome';
+                                }
+                            }
+
+                            //jQuery event that makes the Calculate button event handler
+                            $("#cal").click(function () {
+                                var arr = [];
+                                var sum = 0;
+                                var product = 1;
+                                var mean = 0;
+
+                                //looping through all of my 5 input boxes with class of "form-control"
+                                $("input.form-control").each(function () {
+                                    arr.push(parseFloat($(this).val()));
+
+                                    sum = sum + parseFloat($(this).val());
+                                    product = product * parseFloat($(this).val());
+                                });
+
+                                var least = Math.min(arr[0], arr[1], arr[2], arr[3], arr[4]);
+                                var greatest = Math.max(arr[0], arr[1], arr[2], arr[3], arr[4]);
+                                mean = sum / arr.length;
+
+                                $("#output").html("The least number is " + least + "<br> The greatest number is " + greatest + "<br> The mean is " + mean + "<br> The sum is " + sum + "<br> The product is " + product);
+                                $('#five').modal('show');
+                            });
+                        });
+
+
+                        function fizzBuzz() {
+                            var input1 = +(prompt("Please enter a number between 1 and 100"));
+                            var input2 = +(prompt("Enter another number between 1 and 100"));
+
+                            var fizzHtml = "";
+                            for (i = 1; i <= 100; i++) {
+                                if ((i % input1 == 0) && (i % input2 == 0)) {
+                                    fizzHtml += "FizzBuzz" + " ";
+                                } else if ((i % input1 == 0)) {
+                                    fizzHtml += "Fizz" + " ";
+                                } else if ((i % input2 == 0)) {
+                                    fizzHtml += "Buzz" + " ";
+                                } else {
+                                    fizzHtml += i + " ";
+                                }
+                            }
+                            return (fizzHtml);
+                        }
+
+                        $("#fizzbtn").click(function () {
+                            $("#fizzresult").html(fizzBuzz());
+
+                        });
+
+
+        </script>
+}
+<div container>
+<div class="col-md-2"></div>
+    <div class="col-md-8" style="border: 10px solid blue; border-radius:10%" >
+        <div id="jslinks">
+            <a href="" data-toggle="modal" data-target="#max">Factorial</a><br/>
+            <a href="" data-toggle="modal" data-target="#pali">Palindrome</a>
+            <br/>
+            <a href="" data-toggle="modal" data-target="#five">Five Numbers</a><br/>
+            <a href="" data-toggle="modal" data-target="#fizz">Fizz Buzz</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
