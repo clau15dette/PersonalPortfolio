@@ -1,0 +1,12 @@
+﻿.navbar-inverse {
+    background-color: #1f2ec7;
+    border-color: #080808;
+}
+
+.textShadow {
+    text-shadow: 6px 6px #000000;
+}
+
+.whiteText {
+    color: #ffffff;
+}

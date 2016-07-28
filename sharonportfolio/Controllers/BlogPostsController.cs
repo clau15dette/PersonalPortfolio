@@ -20,6 +20,34 @@ namespace sharonportfolio.Controllers
             return View(db.Posts.ToList());
         }
 
+        //SEARCH FUNCTION
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Search(string query)
+        {
+            //check to see if the query is empty
+            if (String.IsNullOrWhiteSpace(query))
+            {
+                ViewBag.EmptySearch = "Please Enter something to search by.";
+                return View();
+            }
+
+            //go see if we have any results
+            var results = db.Posts.Where(p => p.Title.Contains(query) ||
+                                              p.Body.Contains(query) ||
+                                              p.Comments.Any(c => c.Body.Contains(query))).ToList();
+
+            //check if list is empty
+            if (results.Count == 0)
+            {
+                ViewBag.NoResults = "No search results found.";
+            }
+
+            return View(results);
+
+
+        }
+
         // GET: BlogPosts/Details/5
         public ActionResult Details(int? id)
         {

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<sharonportfolio.Models.BlogPost>
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-8">
+
+            @if (ViewBag.EmptySearch != null)
+            {
+                <h2>@ViewBag.EmptySearch</h2>
+            }
+            else if (ViewBag.NoResults != null)
+            {
+                <h2>@ViewBag.NoResults</h2>
+            }
+            else
+            {
+                foreach (var post in Model)
+                {
+                    <h2>@post.Title</h2>
+                    <h5>@post.Created</h5>
+
+                    <p>@post.Body</p>
+
+                    <br/>
+
+                    <a class="btn btn-default" href="@Url.Action("Details",new {id= post.Id})">Read More</a>
+
+                    <br/>
+
+                    <hr/>
+                }
+            }
+
+            
+
+        </div><!-- left side -->
+
+        <div class="col-md-4">
+
+            <form method="post" action="@Url.Action("Search")">
+                @Html.AntiForgeryToken()
+
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="query" id="query">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+
+                </div>
+
+            </form>
+
+            
+
+        </div><!-- right side -->
+
+    </div><!-- /row -->
+
+</div><!-- /container -->
+
+
+
+
